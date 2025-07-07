@@ -1,0 +1,9 @@
+# File e cartelle generate da Hugo
+/public/
+/resources/
+/node_modules/
+*.DS_Store
+hugo_stats.json
+
+# File di configurazione dell'ambiente locale
+.env
