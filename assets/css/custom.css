@@ -18,3 +18,13 @@ html {
 #typewriter {
     display: inline-block;
 }
+
+.logo-container {
+  margin-bottom: 2rem; /* Aggiunge spazio tra il logo e il testo animato */
+}
+
+.logo-container img {
+  max-width: 80%;
+  width: 400px;
+  height: auto;
+}

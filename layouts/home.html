@@ -1,26 +1,25 @@
 {{ define "main" }}
-<!-- <main class="main">
-  <section  id="hero" class="section">
-    <div class="container">
-      <div class="content">
-        {{ .Content }}
-      </div>
-    </div>
-  </section>  -->
-
+{{/* Prendiamo l'immagine di sfondo dalla cartella /assets */}}
 {{ $bg_image := resources.Get "images/background.jpg" }}
 
-  <main class="main">
-  {{/* Applica lo stile direttamente qui, usando il link generato da Hugo */}}
-  <section id="hero" class="section" style="background-image: linear-gradient(rgba(86, 7, 37, 0.7), rgba(86, 7, 37, 0.7)), url('/images/background.jpg');">
+<main class="main">
+  <section id="hero" class="section" style="background-image: linear-gradient(rgba(86, 7, 37, 0.7), rgba(86, 7, 37, 0.7)), url('{{ $bg_image.RelPermalink }}');">
     <div class="container">
+      {{/* Controlliamo se esistono i dati del banner nel file _index.md */}}
       {{ with .Params.banner }}
 
-        {{/* LA RIGA DA INSERIRE È QUESTA: */}}
-        <h1 id="typewriter" class="h1 mb-4" data-strings='{{ .Params.banner.animated_texts | jsonify }}'></h1>
+        {{/* 1. Mostriamo il logo in alto */}}
+        <div class="logo-container">
+          <img src="{{ .logo }}" alt="Logo Musicanti Folli">
+        </div>
 
+        {{/* 2. Sotto il logo, mettiamo il titolo vuoto per l'animazione */}}
+        <h1 id="typewriter" class="h1 mb-4" data-strings='{{ .animated_texts | jsonify }}'></h1>
+
+        {{/* 3. E poi il resto del contenuto */}}
         <p class="mb-8">{{ .content | markdownify }}</p>
 
+        {{/* Se il bottone è abilitato, lo mostriamo */}}
         {{ if .button.enable }}
           <a class="btn btn-primary" href="{{ .button.link }}">
             {{ .button.label }}
@@ -31,6 +30,7 @@
     </div>
   </section>
 
+  {{/* Codice per mostrare le altre sezioni della one-page */}}
   {{ $pages := where .Site.RegularPages "Section" "sezioni" }}
   {{ range $pages.ByWeight }}
     <section id="{{ .File.TranslationBaseName }}" class="section">
@@ -43,36 +43,27 @@
     </section>
   {{ end }}
 
+</main>
 
-
-{{/* Carichiamo la libreria Typed.js */}}
+{{/* SCRIPT PER L'ANIMAZIONE */}}
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-{{/* Avviamo l'animazione */}}
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    // 1. Seleziona l'elemento che ha i nostri dati
     const typeElement = document.getElementById('typewriter');
-    
-    // 2. Leggi l'attributo 'data-strings'
-    const stringsData = typeElement.getAttribute('data-strings');
+    if (typeElement) {
+      const stringsData = typeElement.getAttribute('data-strings');
+      const stringsToType = JSON.parse(stringsData || '[]');
 
-    // 3. Converti la stringa JSON in un vero array JavaScript.
-    // Se non trova nulla, usa una lista vuota per evitare errori.
-    const stringsToType = JSON.parse(stringsData || '[]');
-
-    // 4. Avvia Typed.js usando l'array che abbiamo appena letto
-    var typed = new Typed('#typewriter', {
-      strings: stringsToType,
-      typeSpeed: 100,
-      backSpeed: 1,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|'
-    });
+      var typed = new Typed('#typewriter', {
+        strings: stringsToType,
+        typeSpeed: 70,
+        // backSpeed: 25,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+    }
   });
 </script>
 
-
-</main>
 {{ end }}
