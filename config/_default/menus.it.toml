@@ -1,4 +1,4 @@
-############# English navigation ##############
+############# Italian navigation ##############
 
 # main menu
 [[main]]
@@ -7,7 +7,11 @@ url = "/"
 weight = 1
 
 [[main]]
-name = "Contatti"
-url = "/about"
-weight = 2
+name = "Chi Siamo"
+url = "/#chi-siamo"
+weight = 10
+
+
+
+
 
