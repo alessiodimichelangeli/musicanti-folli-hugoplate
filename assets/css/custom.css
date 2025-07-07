@@ -1,1 +1,20 @@
-/* Add your own custom styles here */
+html {
+  scroll-behavior: smooth;
+}
+
+#hero {
+  min-height: 100vh;
+  /* background-image: ...; */ /* <-- CANCELLA QUESTA RIGA */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Assicura che il contenitore del testo sia allineato */
+#typewriter {
+    display: inline-block;
+}

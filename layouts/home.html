@@ -1,0 +1,78 @@
+{{ define "main" }}
+<!-- <main class="main">
+  <section  id="hero" class="section">
+    <div class="container">
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>  -->
+
+{{ $bg_image := resources.Get "images/background.jpg" }}
+
+  <main class="main">
+  {{/* Applica lo stile direttamente qui, usando il link generato da Hugo */}}
+  <section id="hero" class="section" style="background-image: linear-gradient(rgba(86, 7, 37, 0.7), rgba(86, 7, 37, 0.7)), url('/images/background.jpg');">
+    <div class="container">
+      {{ with .Params.banner }}
+
+        {{/* LA RIGA DA INSERIRE È QUESTA: */}}
+        <h1 id="typewriter" class="h1 mb-4" data-strings='{{ .Params.banner.animated_texts | jsonify }}'></h1>
+
+        <p class="mb-8">{{ .content | markdownify }}</p>
+
+        {{ if .button.enable }}
+          <a class="btn btn-primary" href="{{ .button.link }}">
+            {{ .button.label }}
+          </a>
+        {{ end }}
+
+      {{ end }}
+    </div>
+  </section>
+
+  {{ $pages := where .Site.RegularPages "Section" "sezioni" }}
+  {{ range $pages.ByWeight }}
+    <section id="{{ .File.TranslationBaseName }}" class="section">
+      <div class="container">
+        <h2 class="h2 text-center mb-8">{{ .Title }}</h2>
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+
+
+{{/* Carichiamo la libreria Typed.js */}}
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+{{/* Avviamo l'animazione */}}
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // 1. Seleziona l'elemento che ha i nostri dati
+    const typeElement = document.getElementById('typewriter');
+    
+    // 2. Leggi l'attributo 'data-strings'
+    const stringsData = typeElement.getAttribute('data-strings');
+
+    // 3. Converti la stringa JSON in un vero array JavaScript.
+    // Se non trova nulla, usa una lista vuota per evitare errori.
+    const stringsToType = JSON.parse(stringsData || '[]');
+
+    // 4. Avvia Typed.js usando l'array che abbiamo appena letto
+    var typed = new Typed('#typewriter', {
+      strings: stringsToType,
+      typeSpeed: 100,
+      backSpeed: 1,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+  });
+</script>
+
+
+</main>
+{{ end }}
