@@ -43,7 +43,6 @@ html {
   display: inline-block;
   color: white; /* Colore dell'icona */
   animation: bounce 2s infinite;
-  
 }
 
 /* Animazione "bounce", ora senza rotazione */
