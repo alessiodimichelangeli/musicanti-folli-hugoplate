@@ -9,7 +9,27 @@ weight = 1
 [[main]]
 name = "Chi Siamo"
 url = "/#chi-siamo"
-weight = 10
+weight = 2
+
+[[main]]
+name = "Eventi"
+url = "/#eventi"
+weight = 3
+
+[[main]]
+name = "Corsi"
+url = "/#corsi"
+weight = 4
+
+[[main]]
+name = "Studio Registrazione"
+url = "/#studio"
+weight = 5
+
+[[main]]
+name = "Produzioni"
+url = "/#produzioni"
+weight = 6
 
 
 

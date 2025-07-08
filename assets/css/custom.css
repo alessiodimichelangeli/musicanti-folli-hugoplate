@@ -58,3 +58,6 @@ html {
   }
 }
 
+.testimonial-line {
+  margin-bottom: 1rem; /* Spazio tra la linea e il testo del testimonial */
+}
