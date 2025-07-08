@@ -14,6 +14,7 @@
     });
   });
 
+
   // Testimonial Slider
   // ----------------------------------------
   new Swiper(".testimonial-slider", {
@@ -33,4 +34,27 @@
       },
     },
   });
+
+  
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Seleziona la lista di link del menu mobile
+  const menuLinksContainer = document.getElementById('nav-menu');
+  // Seleziona la checkbox che controlla il menu
+  const menuToggle = document.getElementById('nav-toggle');
+
+  // Se entrambi gli elementi esistono...
+  if (menuLinksContainer && menuToggle) {
+
+    // ...ascolta i click che avvengono al suo interno
+    menuLinksContainer.addEventListener('click', function(event) {
+
+      // Se l'elemento cliccato è un link (un tag <a>)...
+      if (event.target.tagName === 'A') {
+        // ...deseleziona la checkbox per forzare la chiusura del menu.
+        menuToggle.checked = false;
+      }
+    });
+  }
+});

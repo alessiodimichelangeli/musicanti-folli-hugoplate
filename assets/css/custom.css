@@ -61,3 +61,16 @@ html {
 .testimonial-line {
   margin-bottom: 1rem; /* Spazio tra la linea e il testo del testimonial */
 }
+
+.slider-wrapper {
+  /* Usiamo i margini automatici per centrare il blocco */
+  margin-left: auto;
+  margin-right: auto;
+  /* Diamo al contenitore una larghezza massima */
+  max-width: 600px;
+}
+
+/* FORZA l'altezza minima del contenitore dello slider al suo interno */
+.slider-wrapper .swiper {
+  min-height: 400px !important;
+}
