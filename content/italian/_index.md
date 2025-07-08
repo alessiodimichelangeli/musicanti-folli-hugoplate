@@ -6,9 +6,9 @@ banner:
 #  title: "Musicanti Folli: la musica che fa vibrare l'anima."
 #   content: "Esplora il nostro mondo, ascolta i nostri brani e scopri le prossime date del tour. Entra a far parte della nostra famiglia."
   
-  logo: "/images/logo.png"
+  logo: "/images/musicantifolli.png"
   # 👇 AGGIUNGI QUESTO CAMPO
-  animated_texts: ["Tra Musica e Follia!"]
+  animated_texts: ["Tra Musica e Follia!","Un po' musicanti, un po' folli!"]
 
 #   button:
 #     enable: true

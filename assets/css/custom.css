@@ -4,11 +4,12 @@ html {
 
 #hero {
   min-height: 100vh;
-  /* background-image: ...; */ /* <-- CANCELLA QUESTA RIGA */
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
+  padding-top: 0vh; 
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   color: white;
@@ -17,14 +18,44 @@ html {
 /* Assicura che il contenitore del testo sia allineato */
 #typewriter {
     display: inline-block;
+    color: white !important;
 }
 
+
 .logo-container {
-  margin-bottom: 2rem; /* Aggiunge spazio tra il logo e il testo animato */
+  width: 100%;          /* Assicura che il contenitore occupi tutta la larghezza */
+  text-align: center;   /* Centra l'immagine all'interno del contenitore */
+  /* margin-bottom: 1rem; */
 }
 
 .logo-container img {
   max-width: 80%;
-  width: 400px;
+  scale: 0.7;
   height: auto;
+  margin-left: 2rem;
 }
+
+
+
+/* Contenitore per posizionare la freccia in basso */
+/* Stile per il link contenente l'icona SVG */
+.scroll-down-arrow {
+  display: inline-block;
+  color: white; /* Colore dell'icona */
+  animation: bounce 2s infinite;
+  
+}
+
+/* Animazione "bounce", ora senza rotazione */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
