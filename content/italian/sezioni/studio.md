@@ -1,13 +1,13 @@
 ---
-title: "Studio"
+title: "Servizi Studio"
 enable: true
 description: "Il nostro sudio di registrazione."
-weight: 5
+weight: 6
 ---
-###### Slider
+###### Il nostro Studio
 
 <div class="slider-wrapper">
-  {{< slider dir="images/gallery" class="max-w-[600px] h-[400px]" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
+  {{< slider dir="images/gallery" class="max-w-[600px] h-[600]" height="600" width="600" webp="true" command="Fill" option="" zoomable="true" >}}
 
  
 </div>

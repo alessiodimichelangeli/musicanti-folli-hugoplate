@@ -7,12 +7,12 @@ url = "/"
 weight = 1
 
 [[main]]
-name = "Chi Siamo"
+name = "ChiSiamo"
 url = "/#chi-siamo"
 weight = 2
 
 [[main]]
-name = "Eventi"
+name = "MusicaPerEventi"
 url = "/#eventi"
 weight = 3
 
@@ -22,14 +22,15 @@ url = "/#corsi"
 weight = 4
 
 [[main]]
-name = "Studio Registrazione"
-url = "/#studio"
+name = "Produzioni"
+url = "/#produzioni"
 weight = 5
 
 [[main]]
-name = "Produzioni"
-url = "/#produzioni"
+name = "ServiziStudio"
+url = "/#studio"
 weight = 6
+
 
 
 
