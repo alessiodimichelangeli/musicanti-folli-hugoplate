@@ -5,7 +5,7 @@ weight: 4
 
 
 {{< tabs >}}
-{{< tab "CANTO" >}}
+{{< tab "Canto" >}}
 
 #### Lezioni Private 45'
 
