@@ -1,10 +1,7 @@
 ############# Italian navigation ##############
 
 # main menu
-[[main]]
-name = "Home"
-url = "/"
-weight = 1
+
 
 [[main]]
 name = "ChiSiamo"
@@ -30,6 +27,11 @@ weight = 5
 name = "ServiziStudio"
 url = "/#studio"
 weight = 6
+
+[[main]]
+name = "LoStudio"
+url = "/#lostudio"
+weight = 7
 
 
 

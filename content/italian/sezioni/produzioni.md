@@ -4,7 +4,7 @@ enable: true
 weight: 5
 ---
 
-###### Le nostre produzioni sono 
+
 
 {{< accordion "Brani prodotti per artisti emergenti..." >}}
 
@@ -48,8 +48,7 @@ weight: 5
 - Brano cantato da __Luana Rositano__. Testo e musica di __Alessio Di Michelangeli__.
 {{< youtube -tFyOgfo7Zw >}}
 
-<hr>
+
 
 {{< /accordion >}}
 
-<hr>
